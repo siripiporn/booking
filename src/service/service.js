@@ -7,7 +7,7 @@ const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 import Service from '../image/service.svg'
 
-export default class HomeScreen extends Component {
+export default class Service extends Component {
     render() {
         return (
             <View style={styles.container}>
