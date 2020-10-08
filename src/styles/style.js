@@ -104,7 +104,7 @@ export const Stylesglobal = StyleSheet.create({
         fontSize: 16,
         borderBottomWidth: 1,
         borderColor: '#4886E9',
-        color: 'white'
+        color: '#4886E9'
     },
     inputPassword: {
         flex: 1,

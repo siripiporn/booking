@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Button } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Button,TouchableHighlight } from 'react-native';
 import { globalStyles } from './styles/globalStyles'
 import GenerateUser from '../src/generateUser'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import Service from '../src/service/Service'
+//import { TouchableHighlight } from 'react-native-gesture-handler';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
-import Service from '../image/service.svg'
+ 
+
 
 export default class HomeScreen extends Component {
+
+    onService(){
+        this.props.navigation.navigate('Service')
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -24,16 +32,20 @@ export default class HomeScreen extends Component {
 
                             </View>
                             <View style={styles.section_content}>
-                                <Text style={globalStyles.h1}>SELECT SERVICE
-                                 </Text>
+                                
+                                    <Text style={globalStyles.h1}>SELECT SERVICE</Text>
+                                 
                             </View>
                             
                             {/* Box1 */}
                             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 6,marginTop:hp('5%') }}>
 
                                 <View style={{ flex: 1, }}>
+                                <TouchableHighlight onPress={this.onService.bind(this)}> 
                                     <Image style={{ width: 126, alignSelf: 'center', height: 126 }} source={require('../image/services.jpg')} />
+                                </TouchableHighlight>
                                 </View>
+
                                 <View style={{ flex: 1, }} >
                                     <Image style={{ width: 126, height: 126, alignSelf: 'center' }} source={require('../image/doctor.png')} />
                                 </View>

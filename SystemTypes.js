@@ -1,0 +1,6 @@
+export const UPDATE_Account = 'UPDATE_Account'
+export const UPDATE_Index = 'UPDATE_Index'
+export const UPDATE_ListMemberCardArray = 'UPDATE_ListMemberCardArray'
+export const UPDATE_ListCardVoucherArray = 'UPDATE_ListCardVoucherArray'
+export const UPDATE_ListHistoryTransactionArray = 'UPDATE_ListHistoryTransactionArray'
+export const UPDATE_ListHistoryVoucherArray = 'UPDATE_ListHistoryVoucherArray'
