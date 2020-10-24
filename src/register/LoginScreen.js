@@ -79,17 +79,35 @@
             var result = [];
             result = response.data;
             if(result.data.length > 0){
-           this.props.navigation.navigate('HomeScreen')
+           
+                this.props.navigation.navigate('HomeScreen')
             }else
             {
               Alert.alert(result.message) ;
             }
+            // 
+            
             
         })
         .catch(function (response) {
             //handle error
-            console.error(response);
-        });
+            //console.error(response);
+            if (error.response) {
+                // Request made and server responded
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+              } else if (error.request) {
+                // The request was made but no response was received
+                console.log(error.request);
+              } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message);
+              }
+        }
+        
+        
+        );
        
         }
 
@@ -97,14 +115,15 @@
         onGoback() {
             this.props.navigation.goBack();
         }
-        OnLogin() {
-            this.props.navigation.navigate('HomeScreen')
-        }
+        
         OnRegister() {
             this.props.navigation.navigate('RegisterScreen')
         }
         ForgotPassword(){
             this.props.navigation.navigate('ForgotPassword')
+        }
+        OnLogin(){
+            this.props.navigation.navigate('HomeScreen')
         }
         render() {
             return (
@@ -167,7 +186,7 @@
                                                     <View style={{ flex: 1, flexDirection: 'row', marginTop: hp('2%') }}>
                                                         <View style={Stylesglobal.buttom_save} >
                                                             {/* <TouchableOpacity onPress={this.onRegisterPressed.bind(this)} */}
-                                                            <TouchableOpacity onPress={this.onLoginPressed.bind(this)}
+                                                            <TouchableOpacity onPress={this.OnLogin.bind(this)}
                                                                 style={Stylesglobal.loginButton}>
                                                                 <Text style={Stylesglobal.loginButtonText}>
                                                                     ENTER
